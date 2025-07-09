@@ -24,3 +24,28 @@ ALLOWED_MODEL_NAMES = [
     "llama-3.3-70b-versatile",
     "gpt-4o-mini",
 ]
+
+
+@app.post("/chat")
+def chat(request_state: RequestState):
+    """
+    This endpoint receives a chat request with the model name, provider, system prompt, and messages.
+    It processes the request and returns a response from the AI agent.
+    """
+    if request_state.model_name not in ALLOWED_MODEL_NAMES:
+        return {"error": "Model not allowed"}
+
+    llm_id = request_state.model_name
+    provider = request_state.model_provider
+    prompt = request_state.system_prompt
+    query = request_state.messages
+    allow_search = request_state.allow_search
+
+    # Create AI Agent and get response from it!
+    response = get_response_from_ai_agent(llm_id, query, allow_search, prompt, provider)
+    return {"response": response}
+
+
+# Step3: Run app & Explore Swagger UI Docs
+if __name__ == "__main__":
+    uvicorn.run(app, host="127.0.0.1", port=9999)
