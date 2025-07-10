@@ -49,3 +49,24 @@ def chat(request_state: RequestState):
 # Step3: Run app & Explore Swagger UI Docs
 if __name__ == "__main__":
     uvicorn.run(app, host="127.0.0.1", port=9999)
+
+
+# Frontend/
+# Step1: Setup UI with streamlit (model provider, model, system prompt, web_search, query)
+import streamlit as st
+import requests
+
+st.set_page_config(
+    page_title="AI Agent using Langraph", page_icon=":robot_face:", layout="wide"
+)
+st.title("AI Agent")
+st.write(
+    "This is a simple AI Agent using Langraph. You can ask questions and get answers from the AI Agent. You can also search the web for information."
+)
+
+system_prompt = st.text_area(
+    "Define your AI agent:",
+    key="Enter your system prompt",
+    placeholder="You are helpful AI chatbot assistant. You can answer questions and search the web for information.",
+    height=70,
+)
