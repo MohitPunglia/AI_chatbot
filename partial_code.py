@@ -70,3 +70,21 @@ system_prompt = st.text_area(
     placeholder="You are helpful AI chatbot assistant. You can answer questions and search the web for information.",
     height=70,
 )
+
+MODEL_NAME_GROQ = ["llama-3.3-70b-versatile", "mixtral-8x7b-32768"]
+MODEL_NAME_OPENAI = ["gpt-4o-mini"]
+
+provider = st.radio("select model provider", ["groq", "openai"], horizontal=True)
+
+if provider == "groq":
+    model_name = st.selectbox("select model", MODEL_NAME_GROQ)
+else:
+    model_name = st.selectbox("select model", MODEL_NAME_OPENAI)
+
+allow_search = st.checkbox("Allow web search", value=True)
+
+query = st.text_area(
+    "Enter your query:", placeholder="Ask a question...", key="query_input", height=150
+)
+
+API_URL = "http://127.0.0.1:9999/chat"
