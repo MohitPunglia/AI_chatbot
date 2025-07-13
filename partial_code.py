@@ -112,3 +112,28 @@ if st.button("Get Response"):
                 st.error(f"Error: {response.status_code} - {response.text}")
     else:
         st.warning("Please enter a query.")
+
+## Test.py file
+
+{
+    "messages": [
+        HumanMessage(
+            content="What is the latest news in India related to AI ",
+            additional_kwargs={},
+            response_metadata={},
+            id="b9c97836-a04b-4dba-8f47-9871c8614a6a",
+        ),
+        AIMessage(
+            content="",
+            additional_kwargs={
+                "tool_calls": [
+                    {
+                        "id": "call_g0bw",
+                        "function": {
+                            "arguments": '{"query":"latest news in AI"}',
+                            "name": "tavily_search_results_json",
+                        },
+                        "type": "function",
+                    }
+                ]
+            },
