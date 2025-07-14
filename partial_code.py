@@ -137,3 +137,27 @@ if st.button("Get Response"):
                     }
                 ]
             },
+                       response_metadata={
+                "token_usage": {
+                    "completion_tokens": 53,
+                    "prompt_tokens": 947,
+                    "total_tokens": 1000,
+                    "completion_time": 0.176793333,
+                    "prompt_time": 0.032161947,
+                    "queue_time": 0.050550013,
+                    "total_time": 0.20895528,
+                },
+                "model_name": "llama3-70b-8192",
+                "system_fingerprint": "fp_dd4ae1c591",
+                "finish_reason": "tool_calls",
+                "logprobs": None,
+            },
+            id="run--8183d2c6-39ca-4919-bd9d-53ffa0fe1876-0",
+            tool_calls=[
+                {
+                    "name": "tavily_search_results_json",
+                    "args": {"query": "latest news in AI"},
+                    "id": "call_g0bw",
+                    "type": "tool_call",
+                }
+            ],
