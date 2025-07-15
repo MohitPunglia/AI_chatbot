@@ -161,3 +161,20 @@ if st.button("Get Response"):
                     "type": "tool_call",
                 }
             ],
+                       usage_metadata={
+                "input_tokens": 947,
+                "output_tokens": 53,
+                "total_tokens": 1000,
+            },
+        ),
+        ToolMessage(
+            content='[{"url": "https://www.crescendo.ai/news/latest-ai-news-and-updates", "content": "Summary: OpenAI launched \\"Operator,\\" a new AI assistant capable of handling various online tasks, such as ordering groceries and processing ticket purchases."}, {"url": "https://www.nbcnews.com/artificial-intelligence", "content": "The latest news and top stories on artificial intelligence, including AI chatbots like Microsoft\'s ChatGPT, Apple\'s AI Chatbot and Google\'s Bard."}]',
+            name="tavily_search_results_json",
+            id="e09dc2d6-c225-41fb-8604-a0c66ea9733e",
+            tool_call_id="call_g0bw",
+            artifact={
+                "query": "latest news in AI",
+                "follow_up_questions": None,
+                "answer": None,
+                "images": [],
+                "results": [
