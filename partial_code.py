@@ -178,3 +178,18 @@ if st.button("Get Response"):
                 "answer": None,
                 "images": [],
                 "results": [
+                   {
+                        "url": "https://www.crescendo.ai/news/latest-ai-news-and-updates",
+                        "title": "Latest AI Breakthroughs and News: May-June 2025 - Crescendo.ai",
+                        "content": 'Summary: OpenAI launched "Operator," a new AI assistant capable of handling various online tasks, such as ordering groceries and processing ticket purchases.',
+                        "score": 0.7732339,
+                        "raw_content": None,
+                    },
+                    {
+                        "url": "https://www.nbcnews.com/artificial-intelligence",
+                        "title": "Artificial intelligence - NBC News",
+                        "content": "The latest news and top stories on artificial intelligence, including AI chatbots like Microsoft's ChatGPT, Apple's AI Chatbot and Google's Bard.",
+                        "score": 0.769306,
+                        "raw_content": None,
+                    },
+                ],
