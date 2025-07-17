@@ -193,3 +193,19 @@ if st.button("Get Response"):
                         "raw_content": None,
                     },
                 ],
+                               "response_time": 2.19,
+            },
+        ),
+        AIMessage(
+            content="According to the latest news, OpenAI has launched \"Operator\", a new AI assistant capable of handling various online, such as ordering groceries and processing ticket purchases. Additionally, there are ongoing developments in AI chatbots, with Microsoft's ChatGPT, and Google's Bard.",
+            additional_kwargs={},
+            response_metadata={
+                "token_usage": {
+                    "completion_tokens": 56,
+                    "prompt_tokens": 1122,
+                    "total_tokens": 1178,
+                    "completion_time": 0.226801689,
+                    "prompt_time": 0.038272468,
+                    "queue_time": 0.064210402,
+                    "total_time": 0.265074157,
+                },
