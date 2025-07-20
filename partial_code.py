@@ -222,3 +222,18 @@ if st.button("Get Response"):
                 "total_tokens": 1178,
             },
         ),
+    ],
+    "response_metadata": {
+        "model_name": "llama3-70b-8192",
+        "system_fingerprint": "fp_dd4ae1c591",
+        "finish_reason": "stop",
+        "token_usage": {
+            "completion_tokens": 56,
+            "prompt_tokens": 1122,
+            "total_tokens": 1178,
+            "completion_time": 0.226801689,
+            "prompt_time": 0.038272468,
+            "queue_time": 0.064210402,
+            "total_time": 0.265074157,
+        },
+    },
