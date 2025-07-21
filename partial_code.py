@@ -237,3 +237,15 @@ if st.button("Get Response"):
             "total_time": 0.265074157,
         },
     },
+    "state": {
+        "messages": [
+            "What is the latest news in India related to AI ",
+            "According to the latest news, OpenAI has launched \"Operator\", a new AI assistant capable of handling various online, such as ordering groceries and processing ticket purchases. Additionally, there are ongoing developments in AI chatbots, with Microsoft's ChatGPT, and Google's Bard.",
+        ]
+    },
+    "id": "run--8183d2c6-39ca-4919-bd9d-53ffa0fe1876",
+    "type": "react_agent",
+    "model_provider": "groq",
+    "model_name": "llama3-70b-8192",
+    "system_prompt": "You are helpful AI chatbot assistant. You can answer questions and search the web for information.",
+    "allow_search": True,
