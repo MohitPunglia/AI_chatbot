@@ -18,3 +18,33 @@ This guide provides step-by-step instructions to set up your project environment
 ```
 pip install pipenv
 ```
+2. **Install Dependencies with Pipenv:** 
+
+```
+pipenv install
+```
+
+3. **Activate the Virtual Environment:** 
+
+```
+pipenv shell
+```
+
+---
+
+### Using `pip` and `venv`
+#### Create a Virtual Environment:
+```
+python -m venv venv
+```
+
+#### Activate the Virtual Environment:
+**macOS/Linux:**
+```
+source venv/bin/activate
+```
+
+**Windows:**
+```
+venv\Scripts\activate
+```
