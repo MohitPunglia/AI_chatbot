@@ -39,3 +39,23 @@ def parse_tool_call(tool_call: ToolCall) -> ToolCallMessage:
         artifact=tool_call.artifact if hasattr(tool_call, "artifact") else None,
     )
     return tool_call_message
+
+
+def parse_ai_message(ai_message: AIMessage) -> AIMessage:
+    """Parse an AIMessage into a structured format."""
+    tool_calls = (
+        [parse_tool_call(tool_call) for tool_call in ai_message.tool_calls]
+        if ai_message.tool_calls
+        else []
+    )
+
+    ai_message_parsed = AIMessage(
+        content=ai_message.content,
+        additional_kwargs=ai_message.additional_kwargs,
+        response_metadata=ai_message.response_metadata,
+        id=ai_message.id,
+        tool_calls=tool_calls,
+        usage_metadata=ai_message.usage_metadata,
+    )
+
+    return ai_message_parsed
