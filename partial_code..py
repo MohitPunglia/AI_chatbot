@@ -59,3 +59,14 @@ def parse_ai_message(ai_message: AIMessage) -> AIMessage:
     )
 
     return ai_message_parsed
+
+
+def parse_human_message(human_message: HumanMessage) -> HumanMessage:
+    """Parse a HumanMessage into a structured format."""
+    human_message_parsed = HumanMessage(
+        content=human_message.content,
+        additional_kwargs=human_message.additional_kwargs,
+        response_metadata=human_message.response_metadata,
+        id=human_message.id,
+    )
+    return human_message_parsed
