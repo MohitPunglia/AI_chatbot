@@ -70,3 +70,22 @@ def parse_human_message(human_message: HumanMessage) -> HumanMessage:
         id=human_message.id,
     )
     return human_message_parsed
+
+
+def parse_tool_call_response_message(
+    tool_call_response_message: ToolCallResponseMessage,
+) -> ToolCallResponseMessage:
+    """Parse a ToolCallResponseMessage into a structured format."""
+    tool_call_response = tool_call_response_message.tool_call_response
+
+    tool_message = parse_tool_call_response(tool_call_response)
+
+    tool_call_response_message_parsed = ToolCallResponseMessage(
+        content=tool_message.content,
+        name=tool_message.name,
+        id=tool_message.id,
+        tool_call_id=tool_message.tool_call_id,
+        artifact=tool_message.artifact,
+    )
+
+    return tool_call_response_message_parsed
