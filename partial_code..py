@@ -89,3 +89,18 @@ def parse_tool_call_response_message(
     )
 
     return tool_call_response_message_parsed
+
+
+def parse_messages(messages):
+    """Parse a list of messages into structured format."""
+    parsed_messages = []
+    for message in messages:
+        if isinstance(message, AIMessage):
+            parsed_messages.append(parse_ai_message(message))
+        elif isinstance(message, HumanMessage):
+            parsed_messages.append(parse_human_message(message))
+        elif isinstance(message, ToolCallResponseMessage):
+            parsed_messages.append(parse_tool_call_response_message(message))
+        else:
+            parsed_messages.append(message)  # Handle other message types as needed
+    return parsed_messages
