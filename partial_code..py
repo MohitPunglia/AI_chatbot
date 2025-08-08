@@ -11,6 +11,8 @@ from langchain_core.messages import (
     ToolCallResponseContentItemMetadataValueTypeValueType,
 )
 
+from langchain.agents import agent
+
 
 def parse_tool_call_response(tool_call_response: ToolCallResponse) -> ToolMessage:
     """Parse a ToolCallResponse into a ToolMessage."""
