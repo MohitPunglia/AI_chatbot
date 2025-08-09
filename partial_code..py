@@ -106,3 +106,25 @@ def parse_messages(messages):
         else:
             parsed_messages.append(message)  # Handle other message types as needed
     return parsed_messages
+
+
+def parse_tool_call_response_content(
+    tool_call_response_content: ToolCallResponseContent,
+) -> ToolCallResponseContent:
+    """Parse a ToolCallResponseContent into a structured format."""
+    items = [
+        {
+            "name": item.name,
+            "value": item.value,
+            "metadata": item.metadata,
+            "type": item.type,
+        }
+        for item in tool_call_response_content.items
+    ]
+
+    parsed_content = ToolCallResponseContent(
+        items=items,
+        additional_kwargs=tool_call_response_content.additional_kwargs,
+    )
+
+    return parsed_content
