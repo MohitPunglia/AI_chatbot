@@ -128,3 +128,13 @@ def parse_tool_call_response_content(
     )
 
     return parsed_content
+
+
+def parse_tool_call_response_content_item_metadata_value_type(
+    value_type: ToolCallResponseContentItemMetadataValueTypeValueType,
+) -> ToolCallResponseContentItemMetadataValueTypeValueType:
+    """Parse a ToolCallResponseContentItemMetadataValueTypeValueType."""
+    return ToolCallResponseContentItemMetadataValueTypeValueType(
+        type=value_type.type,
+        additional_kwargs=value_type.additional_kwargs,
+    )
