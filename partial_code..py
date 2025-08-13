@@ -163,3 +163,10 @@ def parse_tool_call_response_content_item(
         type=item.type,
         additional_kwargs=item.additional_kwargs,
     )
+
+
+def parse_tool_call_response_content_items(
+    items: list[ToolCallResponseContentItem],
+) -> list[ToolCallResponseContentItem]:
+    """Parse a list of ToolCallResponseContentItem."""
+    return [parse_tool_call_response_content_item(item) for item in items]
