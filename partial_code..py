@@ -170,3 +170,10 @@ def parse_tool_call_response_content_items(
 ) -> list[ToolCallResponseContentItem]:
     """Parse a list of ToolCallResponseContentItem."""
     return [parse_tool_call_response_content_item(item) for item in items]
+
+
+def parse_tool_call_response_content_items_metadata(
+    items: list[ToolCallResponseContentItemMetadataValueType],
+) -> list[ToolCallResponseContentItemMetadataValueType]:
+    """Parse a list of ToolCallResponseContentItemMetadataValueType."""
+    return [parse_tool_call_response_content_item_metadata(item) for item in items]
