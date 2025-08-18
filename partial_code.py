@@ -187,3 +187,10 @@ def parse_tool_call_response_content_items_metadata_value_type(
         parse_tool_call_response_content_item_metadata_value_type(item)
         for item in items
     ]
+
+
+def parse_tool_call_response_content_items_value(
+    items: list[ToolCallResponseContentItem],
+) -> list[ToolCallResponseContentItem]:
+    """Parse a list of ToolCallResponseContentItem values."""
+    return [item.value for item in items if hasattr(item, "value")]
