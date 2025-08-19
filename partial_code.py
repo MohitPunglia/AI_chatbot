@@ -194,3 +194,10 @@ def parse_tool_call_response_content_items_value(
 ) -> list[ToolCallResponseContentItem]:
     """Parse a list of ToolCallResponseContentItem values."""
     return [item.value for item in items if hasattr(item, "value")]
+
+
+def parse_tool_call_response_content_items_names(
+    items: list[ToolCallResponseContentItem],
+) -> list[str]:
+    """Parse a list of ToolCallResponseContentItem names."""
+    return [item.name for item in items if hasattr(item, "name")]
